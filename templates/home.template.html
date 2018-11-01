@@ -1,0 +1,7 @@
+<h1>Hello there</h1>
+
+<button class="btn" ng-click="$ctrl.getMyLocation()">Location buster</button>
+<div ng-if="$ctrl.latitude">
+    <p>Hey these are your coordinates: latitude:{{$ctrl.latitude}}|longitude:{{$ctrl.longitude}}</p>
+</div>
+<p class="text-danger">Trebuie dat dbclick pentru a aparea locatia. Se face async call si ng--</p>

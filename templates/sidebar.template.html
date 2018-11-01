@@ -1,0 +1,14 @@
+<!-- Sidebar -->
+
+<nav id="sidebar" class="flex-fill" ng-class="{active: visible}">
+    <div class="sidebar-header">
+        <a href="/"><h3>Website routing</h3></a>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li ng-repeat="items in $ctrl.menu">
+            <a href={{items.url}}>{{items.name}}</a>
+        </li>
+    </ul>
+</nav>
+

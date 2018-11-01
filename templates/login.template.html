@@ -1,0 +1,28 @@
+<div class="text-center mx-auto"  ng-init="$ctrl.user.loggedIn = false">
+        <div class="card">            
+        <div class="card-body">
+            
+            <div ng-if="$ctrl.myErr">
+                <p class="text-danger font-weight-bold display-4">{{$ctrl.myErr}}</p>
+            </div>
+            
+            <h2 class="card-title" ng-hide="$ctrl.myErr">This is a login page</h1>
+            <div ng-if="!$ctrl.user.loggedIn">
+                <form name="loginForm" ng-init="$ctrl.getRequest()" ng-submit="$ctrl.check(user.username, user.password)" novalidate>
+                    <div class="form-group">
+                        <input name="username" type="text" ng-model="user.username" placeholder="User" required>
+                    </div>
+                    <div class="form-group">
+                        <input name="password" type="password" ng-model="user.password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+            <div ng-if="$ctrl.user.loggedIn">                
+                    <img class="rounded img-thumbnail" src="assets/tesla-cat.jpg" alt="">
+                    <button class="btn btn-warning mt-2" ng-click="$ctrl.logOut()">Log out</button>
+            </div>
+        </div>           
+    </div>

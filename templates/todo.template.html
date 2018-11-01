@@ -1,0 +1,16 @@
+<label for="task">Enter your task</label>
+        <input ng-model="myTask" name="task"type="text">
+        <button ng-click="$ctrl.pushTask(myTask)">Add</button>
+        
+        <!-- {{taskList}} -->
+        <div ng-repeat="task in $ctrl.taskList">
+        <div class="card">
+            <span ng-init="$ctrl.editMode = false"></span>
+            <div class="card-body">
+                <!-- ng-model to track changed then apply them using ng-blur -->
+                <input type="text" style="border:none" style="display:inline" ng-model="task" ng-blur="$ctrl.editMe($index, task)" ng-readonly="editMode == true"></input>
+                <button style="display:inline" class="btn btn-danger" ng-click="$ctrl.removeMe($index)">
+                    X
+                </button>
+            </div>
+        </div> 
